@@ -1,0 +1,60 @@
+
+.outer-wrapper {
+    margin-left: 15%;
+    /* margin-right: 5%; */
+    /* margin-top: 12%; */
+    width: 80%;
+    border: 1px solid green;
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    top: 20%;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.9);
+}
+
+.mysearch{
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 20%;
+    padding: 10px;
+}
+
+
+.table-wrapper {
+
+    overflow-y: scroll;
+    overflow-x: scroll;
+    height: fit-content;
+    max-height: 60vh;
+    
+    margin-top: 22px;
+    
+    margin: 15px;
+    padding-bottom: 20px;
+    
+}
+
+
+/* .fishdiv {
+    position: absolute;
+    left: 40%;
+    top: 5%;
+}
+
+.gifdiv {
+    
+    height: 80px;
+    width: 150px;
+    object-fit: cover; 
+    position: absolute;
+}
+
+.gifdiv2 {
+    height: 80px;
+    width: 150px;
+    margin-left: 220px;
+    object-fit: cover; 
+    position: absolute;
+} */
+

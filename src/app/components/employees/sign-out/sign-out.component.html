@@ -1,0 +1,79 @@
+<app-user-dashboard></app-user-dashboard>
+<div class="wrapper">
+    <div><img src="assets/image/admin.png" alt="user-icon" style="width: 200px; height: 200px;"></div>
+    <div style="margin-top: 8%;">
+        <p style="font-size: 1.5rem; font-family: montserrat, sans-serif; margin-bottom: 0px;">{{punchOut.firstName + " " + punchOut.lastName}} </p>
+        <p class="text-muted" style="text-align: center; font-family: montserrat, sans-serif;">{{punchOut.department}}</p>
+        <button class="btn btn-large btn-block;" style="width: 100%; background-color: #e8002b; color: white; font-size: .8rem;" (click)="logOut()">Punch out</button>
+    </div>
+</div>
+
+
+
+
+<!-- <p>sign-out works!</p>
+<div class="wrapper">
+    <div class="main">
+      <a routerLink="/employees/employee-list"><i class="fa-solid fa-arrow-left-long" id="arrow" style="color: white; margin-top: 10px; background-color: blueviolet; position: absolute; padding: 10px 10px 10px 10px; border-radius: 100%;"></i></a>
+      <div class="formhead" style="display: flex; margin-bottom: 10px;">
+        <img class="logo" src="assets/image/chickenville.png" alt="">
+        <h3 style="text-align:center; align-self:center">Modify</h3>
+      </div>
+      <form #form="ngForm" (ngSubmit)="logOut()">
+          <div class="row mb-4">
+            <div class="col">
+              <div class="">
+                <label class="form-label"  style="background-color: black; margin-top: 2px;"> ID</label>
+                <input type="text" minlength="4" maxlength="4" #iname="ngModel" id="id" name="id" [(ngModel)]="punchOut.id" class="form-control" required style="border: 2px solid grey" readonly>
+                
+              </div>
+              <small style="color: red;" *ngIf="iname.invalid && iname.touched"> ID cannot be empty</small>
+            </div>
+            <div class="col">
+              <div class="">
+                <label class="form-label"  style="background-color: black; margin-top: 2px;">Staff ID</label>
+                <input type="text" minlength="4" maxlength="4" #sname="ngModel" id="staffid" name="staffid" [(ngModel)]="punchOut.staffID" class="form-control" required style="border: 2px solid grey" readonly>
+              </div>
+              <small style="color: red; font-size: 10px;" *ngIf="sname.invalid && sname.touched">Staff ID cannot be empty</small>
+            </div>
+            <div class="col">
+              <div class="">
+                <label class="form-label" style="background-color: black; margin-top: 2px;">First Name</label>
+                <input type="text" id="firstname" name="firstname" [(ngModel)]="punchOut.firstName"   class="form-control" required style="border: 2px solid grey" #fname="ngModel"/>
+              </div>
+              <small style="color: red; font-size: 10px;" *ngIf="fname.invalid && fname.touched">First name cannot be empty</small>
+  
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col">
+              <div class="">
+                <label class="form-label" style="background-color: black; margin-top: 2px;">Last Name</label>
+                <input type="text" id="lastname" ngModel #nn="ngModel" name="lastname"[(ngModel)]="punchOut.lastName"  class="form-control" required style="border: 2px solid grey" #lname="ngModel"/>
+              </div>
+              <small style="color: red; font-size: 10px;" *ngIf="lname.invalid && lname.touched">Last name cannot be empty</small>
+  
+            </div>
+           
+          </div>
+          <div class="row mb-4">
+            <div class="col">
+              <div class="">
+                <label class="form-label" style="background-color: black; margin-top: 2px;">Password</label>
+                <input type="password" id="password" name="password" [(ngModel)]="punchOut.password"  class="form-control"style="border: 2px solid grey" required/>
+                
+              </div>
+  
+            </div>
+  
+            
+          </div>
+          <button type="submit" class="btn btn-primary btn-block mybtn" [disabled]="!form.valid">Punch out</button>
+
+
+    
+        </form>
+    </div>
+  </div>
+  
+   -->

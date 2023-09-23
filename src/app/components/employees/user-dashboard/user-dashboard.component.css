@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Space+Grotesk:wght@600&display=swap');
+
+.main {
+    height: 100vh;
+    width: 12vw;
+    background-color: #16191c;
+    z-index: 7;
+    position: absolute;
+    top: 0;
+}
+
+.main2 {
+    height: 100vh;
+}
+
+.logo {
+    height: 100px;
+    width: 150px;
+    margin-top: 10px;
+    object-fit: cover;   
+}
+
+
+
+.active {
+    background-color: #e8002b;
+    padding: 5px 2px;
+    width: 170%;
+    animation-name: ac;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ac {
+        
+    50%{background-color: #0081CF;}
+}
+
+
+
+
+
+.mainLi {
+    display: flex;
+}
+
+hr {
+    color: white;
+    height: 2px;
+    margin-right: 5%;
+    z-index: 7;
+}
+
+
+
+.navi {
+    margin: 5px 10px 0 0 ;
+    color: white;
+}
+
+p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+}
+
+
+
+a:hover {
+    background-color: #e8002b;
+    padding: 5px 2px;
+    width: 170%;
+}

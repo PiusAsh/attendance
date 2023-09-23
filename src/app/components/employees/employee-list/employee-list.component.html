@@ -1,0 +1,41 @@
+<app-dashboard></app-dashboard>
+ <nav><input id="staffid" class="form-control mysearch" type="text" placeholder="Enter first name to search" name="firstName" [(ngModel)]="firstName" (ngModelChange)="Search()"></nav>
+<div class="bigdiv">
+    <div class="mytable outer-wrapper">
+        <div class="table-wrapper"> 
+            <h4 style="text-align: center; margin-top: 2%; color: black;">Chickenville staff</h4>
+            <table class="table table-striped-rows head" style="width: 100%; margin-top: 0%; margin-left: 1%;" *ngIf="employees && employees.length > 0">
+                <thead style="font-size: 1rem; position:sticky; top:0px; background-color: #a7cbd0;
+                ">
+                    <tr>
+                        <th><p style="margin-bottom: 0%;">Id</p></th>
+                        <th><p style="margin-bottom: 0%;">Staff ID</p></th>
+                        <th><p style="margin-bottom: 0%;">First Name</p></th>
+                        <th><p style="margin-bottom: 0%;">Last Name</p></th>
+                        <th><p style="margin-bottom: 0%; text-align: center;">Email</p></th>
+                        <th><p style="margin-bottom: 0%;">Department</p></th>
+                        <th><p style="margin-bottom: 0%;"></p></th>
+                    </tr>
+                </thead>
+    
+                <tbody class="table-group-divider" *ngFor="let employee of employees | paginate: {itemsPerPage: 4, currentPage: p};">
+                    <tr style="font-weight: 600;">
+                        <td class="text-black">{{ employee.id }}</td>
+                        <td class="text-black">{{ employee.staffID }}</td>
+                        <td class="text-black">{{ employee.firstName }} </td>
+                        <td class="text-black"> {{ employee.lastName }}</td>
+                        <td class="text-black"> {{ employee.email }}</td>
+                        <td class="text-black"> {{ employee.department }}</td>
+                        <td class="text-black"> <a [routerLink]="['/employees', 'edit', employee.staffID]" style="background-color: green; padding: 10px; color: white;">Modify</a> </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <pagination-controls (pageChange)="p = $event" *ngIf="employees.length > 0"></pagination-controls>
+        <p style="text-align: center; color: black;" *ngIf="!employees || employees.length <= 0">No records yet</p>
+    </div>
+
+</div>
+
+

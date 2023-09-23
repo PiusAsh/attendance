@@ -1,0 +1,45 @@
+
+<app-user-dashboard></app-user-dashboard>
+
+
+<div class="wrapper">
+    <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+    <div style="position: absolute; top: 5%; left: 15%;">
+    <p style="font-size: 1.5rem; font-family: montserrat, sans-serif; text-align: center; margin-bottom: 0px; font-weight: 700;">Hi, {{single.firstName}}</p>
+    <p class="text-muted" style="font-family: montserrat, sans-serif;">Last signed in: {{single.punchIn.slice(11)}}</p>
+</div>
+    <div class="avatar" style="margin-left: 43%; margin-top: 10%; border: 1px solid #e8002b; height: 400px; padding: 50px;">
+        <img src="assets/image/admin.png" alt="user-icon" style="width: 200px; height: 200px; ">
+        <p style="font-size: 1.5rem; font-family: montserrat, sans-serif; text-align: center; font-weight: 700;">{{single.lastName + " " + single.firstName}}</p>
+        <p class="text-muted" style="text-align: center; font-family: montserrat, sans-serif;">{{single.department}}</p>
+        <a [routerLink]="['/employees', 'password', single.staffID]" style="margin-left: 35px;">Change Password</a>
+        <!-- <h5>Recent activities</h5>
+        <div *ngFor="let singlee of single2">
+            <p>You punched in at {{singlee.punchIn}}</p>
+            <p>You punched out at {{singlee.punchOut}}</p>
+        </div> -->
+    </div>
+    <div style="margin-top: 2%; margin-left: 23%; height: 0%;">
+        <button class="btn btn-large btn-block;" style="width: 100%; background-color: #e8002b; color: white; font-size: .8rem;"  data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Punch out</button>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="remove">
+            <i class="fa-solid fa-fingerprint fa-4x" style="margin-top: 50px; margin-left: 30px; color: #e8002b;"></i>
+            <h6 style="color: red; margin-top: 15%; margin-left: 10%; font-size: 1.2rem;">Are you sure you want to punch out?</h6>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn" style="background-color: red; color:white" data-bs-dismiss="modal" (click)="punchMeOut()">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

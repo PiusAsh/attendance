@@ -1,0 +1,77 @@
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    color: black;
+    position: absolute;
+    display: flex;
+    top: 0%;    
+    box-sizing: border-box;
+    padding: 10px 40px 30px 10px;
+}
+
+.mybtn {
+    width: 50%;
+    margin: 5% 0 0 25%;
+    padding: 10px;
+    font-size: 1rem;
+    display: block;
+    background-color: #845EC2;
+
+}
+.mybtn2 {
+    width: 50%;
+    margin: 5% 0 0 25%;
+    padding: 10px;
+    font-size: 1rem;
+    display: block;
+    background-color: red;
+
+}
+
+.remove {
+    display: flex;
+}
+
+.trash {
+    height: 150px;
+    width: 150px;
+    margin-left: 30px;
+    object-fit: cover;
+}
+
+
+.logo {
+    height: 100px;
+    width: 150px;
+    margin-left: 30px;
+    margin-top: 10px;
+    object-fit: cover;   
+}
+
+
+/* input.ng-invalid.ng-touched {
+    outline: 1px solid red;
+} */
+label {
+    color: white !important;
+}
+
+
+
+input[type=text],
+input[type=text],
+input[type=email],
+input[type=password],
+::placeholder
+{
+    color:black;
+}
+
+select {
+    color: black;    
+}
+select option { color: black; }
+
+

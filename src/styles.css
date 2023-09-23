@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    background-image: url(assets/image/ccchc.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    margin-top: 0;
+  }
+
+  .ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: green !important;
+    color: #fefefe !important;
+    cursor: default;
+  }
+
+  /* .ngx-pagination {
+    margin-left: 35% !important;
+  } */
+  
+
+  .overlay{
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: black;
+    opacity: .5;
+    bottom: 0%;
+    position: absolute;
+    animation-name: overrr;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes overrr {
+        
+    25%{background-color: #24145f;}
+    50%{background-color: #270A33;}
+    100%{background-color: rgb(5, 5, 5);}
+}
+

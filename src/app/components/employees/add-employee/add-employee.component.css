@@ -1,0 +1,90 @@
+
+.wrapper {
+    width: 500px;
+    background-color: black;
+    color: white;
+    margin-left:37%;
+    position: absolute;
+    top: 10%;    
+    box-sizing: border-box;
+    padding: 10px 40px 30px 40px;
+}
+
+
+.mybtn {
+    width: 50%;
+    margin: 5% 0 0 25%;
+    padding: 10px;
+    font-size: 1rem;
+    display: block;
+    background-color: #008F7A;
+
+}
+
+.wrapper {
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+.logo {
+    height: 100px;
+    width: 150px;
+    margin-left: 30px;
+    margin-top: 10px;
+    object-fit: cover;   
+}
+
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 70%;
+    }
+  
+    to {
+      margin-top: 0%;
+      width: 50%;
+    }
+  }
+
+/* input.ng-invalid.ng-touched {
+    outline: 1px solid red;
+} */
+label {
+    color: white !important;
+}
+
+#arrow {
+    animation: mystyle2 3s;
+    position: relative;
+    animation-iteration-count: infinite;
+    animation-name: arrow-icon;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes arrow-icon {
+    0%{background-color: aqua;}
+    25%{background-color: rgb(150, 72, 196);}
+    50%{background-color: rgb(199, 45, 45);}
+    100%{background-color: rgb(16, 189, 59);}
+}
+
+
+input[type=text],
+input[type=text],
+input[type=email],
+input[type=password],
+::placeholder
+{
+    color:white;
+}
+
+select {
+    color: white;
+}
+select option { color: black; }
+
+
+

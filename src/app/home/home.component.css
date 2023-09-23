@@ -1,0 +1,73 @@
+
+
+.heading {
+    position: absolute;
+    margin: 0 auto;
+    top: 20%;
+    left: 30%;
+    width: 650px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5.3rem !important;
+    font-weight: 700 !important;
+}
+
+h1 {
+    animation-duration: 1s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-top: 100%;
+      width: 100%;
+    }
+  
+    to {
+      margin-top: 0%;
+      width: 100%;
+    }
+  }
+  
+
+.headerh6 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.dChicken {
+  height: 220px;
+  width: 220px;
+  margin-left: 20px;
+  position: absolute;
+  left: 70%;
+  bottom: 36%;
+  /* object-fit: cover;    */
+}
+
+
+.main {
+    width: 45%;
+    z-index: 6;
+    margin-left: 30%;
+    position: absolute;
+    top: 28%;
+}
+
+  .login-buttn {
+    /* margin: 10px 0 0 20%; */
+    position: absolute;
+    bottom: 55vh;
+    left: 60vw;
+}
+
+.login-buttn:hover {
+    background-color: yellow !important;
+    color: #1D1D1D !important;
+}

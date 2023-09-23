@@ -1,0 +1,104 @@
+<div class="wrapper">
+  <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+    <div class="main">
+      <a routerLink="/employees/employee-list"><i class="fa-solid fa-arrow-left-long" id="arrow" style="color: white; margin-top: 10px; background-color: blueviolet; position: absolute; padding: 10px 10px 10px 10px; border-radius: 100%;"></i></a>
+      <div class="formhead" style="display: flex; margin-bottom: 10px;">
+        <img class="logo" src="assets/image/chickenville.png" alt="">
+        <h3 style="text-align:center; align-self:center">Modify</h3>
+      </div>
+      <form #form="ngForm" (ngSubmit)="modifyWorker()">
+          <!-- 2 column grid layout with text inputs for the first and last names -->
+          <div class="row mb-4">
+            <div class="col">
+              <div class="">
+                <label class="form-label"  style="background-color: black; margin-top: 2px;"> ID</label>
+                <input type="text" minlength="4" maxlength="4" #iname="ngModel" id="id" name="id" [(ngModel)]="EmployeeModify.id" class="form-control" required style="border: 2px solid grey" readonly>
+                
+              </div>
+              <small style="color: red;" *ngIf="iname.invalid && iname.touched"> ID cannot be empty</small>
+            </div>
+            <div class="col">
+              <div class="">
+                <label class="form-label"  style="background-color: black; margin-top: 2px;">Staff ID</label>
+                <input type="text" minlength="4" maxlength="4" #sname="ngModel" id="staffid" name="staffid" [(ngModel)]="EmployeeModify.staffID" class="form-control" required style="border: 2px solid grey" readonly>
+              </div>
+              <small style="color: red; font-size: 10px;" *ngIf="sname.invalid && sname.touched">Staff ID cannot be empty</small>
+            </div>
+            <div class="col">
+              <div class="">
+                <label class="form-label" style="background-color: black; margin-top: 2px;">First Name</label>
+                <input type="text" id="firstname" name="firstname" [(ngModel)]="EmployeeModify.firstName"   class="form-control" required style="border: 2px solid grey" #fname="ngModel"/>
+              </div>
+              <small style="color: red; font-size: 10px;" *ngIf="fname.invalid && fname.touched">First name cannot be empty</small>
+  
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col">
+              <div class="">
+                <label class="form-label" style="background-color: black; margin-top: 2px;">Last Name</label>
+                <input type="text" id="lastname" ngModel #nn="ngModel" name="lastname"[(ngModel)]="EmployeeModify.lastName"  class="form-control" required style="border: 2px solid grey" #lname="ngModel"/>
+              </div>
+              <small style="color: red; font-size: 10px;" *ngIf="lname.invalid && lname.touched">Last name cannot be empty</small>
+  
+            </div>
+            <div class="col">
+              <div class="">
+                <label class="form-label" style="background-color: black; margin-top: 2px;">Email</label>
+                <input type="email" id="email" name="email" [(ngModel)]="EmployeeModify.email"  class="form-control" required style="border: 2px solid grey"#ename="ngModel" />
+              </div>
+              <small style="color: red; font-size: 10px;" *ngIf="ename.invalid && ename.touched">Email field can't be empty</small>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col">
+              <div class="">
+                <label class="form-label" style=" margin-top: 2px;">Department</label>
+  
+                <select class="form-control" required id="department" name="department" [(ngModel)]="EmployeeModify.department"  style="border: 2px solid grey; background-color: none;">
+                  <option *ngFor="let post of position">{{post.position}}</option>
+             
+                </select>
+                
+              </div>
+            </div>
+          </div>
+          <!-- Submit button -->
+          <div class="btnn" style="display: flex;">
+            <button type="submit" class="btn btn-primary btn-block mybtn" [disabled]="!form.valid">Modify</button>
+              <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger btn-block mybtn2" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" [disabled]="!form.valid">
+            Delete</button>
+          </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="color: black;">Delete {{EmployeeModify.firstName}}</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="remove">
+          <img class="trash" src="assets/image/trash.gif" alt="trashIcon">
+          <h6 style="color: red; margin-top: 15%; margin-right: 5%; font-size: 1.2rem;">{{remove}} {{EmployeeModify.firstName}} {{EmployeeModify.lastName}}?</h6>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn" style="background-color: red; color:white" data-bs-dismiss="modal" (click)="deleteWorker(EmployeeModify.staffID)" (click)="refresh(form)">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+          <!-- <button type="submit" class="btn btn-primary btn-block mybtn2" (click)="deleteWorker(EmployeeModify.staffID)">Remove</button> -->
+    
+        </form>
+    </div>
+  </div>
+  
+  

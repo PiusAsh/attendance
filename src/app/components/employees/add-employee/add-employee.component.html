@@ -1,0 +1,104 @@
+<app-dashboard></app-dashboard>
+<div class="wrapper">
+  <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+  <div class="main">
+    <a routerLink=''><i class="fa-solid fa-arrow-left-long" id="arrow" style="color: white; margin-top: 10px; background-color: blueviolet; position: absolute; padding: 10px 10px 10px 10px; border-radius: 100%;"></i></a>
+    <div class="formhead" style="display: flex; margin-bottom: 10px; margin-left: 30px;">
+      <img class="logo" src="assets/image/chickenville.png" alt="">
+      <h3 style="text-align:center; align-self:center">Add new staff</h3>
+    </div>
+    <!-- <div class="warning" style="border: 1px solid red; margin-bottom: 20px;" *ngIf="errormessage">
+        <p style="color: red; text-align: center;"><i class="fas fa-exclamation-triangle" style="color: red; margin: 10px;"></i>{{errormessage}}</p>
+    </div> -->
+    <form #form="ngForm" (ngSubmit)="addStaff()">
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" minlength="4" maxlength="4" #sname="ngModel" id="staffid" name="staffid" [(ngModel)]="addEmployee.staffID" class="form-control" required style="border: 2px solid grey">
+              <label class="form-label"  style="background-color: black; margin-top: 2px;">Staff ID</label>
+            </div>
+            <small style="color: red" *ngIf="sname.invalid && sname.touched">Staff ID cannot be empty</small>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="firstname" name="firstname" [(ngModel)]="addEmployee.firstName"   class="form-control" required style="border: 2px solid grey" #fname="ngModel"/>
+              <label class="form-label" style="background-color: black; margin-top: 2px;">First Name</label>
+            </div>
+            <small style="color: red;" *ngIf="fname.invalid && fname.touched">First name cannot be empty</small>
+
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="lastname" ngModel #nn="ngModel" name="lastname"[(ngModel)]="addEmployee.lastName"  class="form-control" required style="border: 2px solid grey" #lname="ngModel"/>
+              <label class="form-label" style="background-color: black; margin-top: 2px;">Last Name</label>
+            </div>
+            <small style="color: red;" *ngIf="lname.invalid && lname.touched">Last name cannot be empty</small>
+
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" id="email" email name="email" [(ngModel)]="addEmployee.email"  class="form-control" required email style="border: 2px solid grey"#ename="ngModel" />
+              <label class="form-label" style="background-color: black; margin-top: 2px;">Email</label>
+            </div>
+            <small style="color: red;" *ngIf="ename.errors && ename.errors && ename.touched">Email is invalid</small>
+          
+          </div>
+        </div>
+        <div class="mb-4">
+          <div class="col">
+            <div class="form-outline">
+              
+              <input type="password" id="password" name="password" [(ngModel)]="addEmployee.password"  class="form-control"style="border: 2px solid grey" required/>
+              <i class="bi bi-eye-slash" 
+                    id="togglePassword"></i>
+      
+              <label class="form-label" style="background-color: black; margin-top: 2px;">Password</label>
+              
+            </div>
+            <!-- <small style="color: red;">Phone number too short</small> -->
+
+          </div>
+
+          <div class="col mt-3">
+            <div class="form-outline">
+              <label class="form-label" style=" margin-top: 2px;">Department</label>
+
+              <select class="form-control text-white" required id="department" name="department" [(ngModel)]="addEmployee.department"  style="border: 2px solid grey">
+                <option *ngFor="let post of position">{{post.position}}</option>
+              </select>
+              <!-- <input type="text" id="form3Example2" class="form-control" style="border: 2px solid grey" /> -->
+              <!-- <label class="form-label" style=" margin-rig: 15px;">Department</label> -->
+              
+            </div>
+          </div>
+        </div>
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4 mybtn" [disabled]="!form.valid">Register</button>
+      </form>
+  </div>
+
+  <!-- <script>
+    const togglePassword = document
+        .querySelector('#togglePassword');
+
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', () => {
+
+        // Toggle the type attribute using
+        // getAttribure() method
+        const type = password
+            .getAttribute('type') === 'password' ?
+            'text' : 'password';
+              
+        password.setAttribute('type', type);
+
+        // Toggle the eye and bi-eye icon
+        this.classList.toggle('bi-eye');
+    });
+</script> -->
+</div>
